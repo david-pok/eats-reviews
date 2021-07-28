@@ -2,12 +2,15 @@ import express from "express";
 import cors from "cors";
 import restaurants from "./api/restaurants.route.js";
 
-const app = express();
+const server = express();
 
-app.use(cors());
-app.use(express.json());
+server.use(cors());
+server.use(express.json());
 
-app.use("api/v1/restaurants", restaurants);
-app.use("*", (req, res) => res.status(404).json({ error: "not found" }));
+server.get("/", (req, res) => {
+  res.send("Server is running...");
+});
+server.use("/api/v1/restaurants", restaurants);
+server.use("*", (req, res) => res.status(404).json({ error: "not found" }));
 
-export default app;
+export default server;
