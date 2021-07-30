@@ -1,7 +1,7 @@
 import app from "./server.js";
 import mongodb from "mongodb";
 import dotenv from "dotenv";
-import RestaurantsDAO from "./dao/restaurantsDAO.js";
+import RestaurantsDAO from "./data access object/restaurantsDAO.js";
 
 dotenv.config();
 
