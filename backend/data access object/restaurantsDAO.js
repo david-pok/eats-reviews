@@ -1,8 +1,16 @@
 // let restaurantsimport mongodb from "mongodb"
 // const ObjectId = mongodb.ObjectID;
 let restaurants;
+//use this restaurants variable to store a reference to our database
 
 export default class RestaurantsDAO {
+  //we use this method to initially connect to our database
+  //call this as soon as the server starts in index.js
+  //once connected we get our reference to the restaurants db
+  //if it there already, we just return it
+  //if not then we try to connect to our db
+  //and hit that specific collection
+  //in this case "restaurants"
   static async injectDB(conn) {
     if (restaurants) {
       return;
@@ -18,6 +26,23 @@ export default class RestaurantsDAO {
     }
   }
 
+  //this is the method we call when we want to get a list of all
+  //the restaurants in the db
+  //we set some options that we make up first
+  //then we set a query
+  //we can set some filters within the query used
+  //below we set a text search for name
+  //a filter for cuisine
+  //and a filter for zipcode
+  //to use the text search we have to set up in mongodb atlas
+  //that we want the text search to search for that specific query
+
+  //we then initialize the cursor variable
+  //we find the restaurants that match our query
+  //limit the pages and add a way to skip over pages if needed
+  //we set the restaurant list to an array
+  //and set the total number of restaurants by counting the documents
+  //and then we return those 2
   static async getRestaurants({
     filters = null,
     page = 0,
