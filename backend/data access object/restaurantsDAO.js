@@ -1,5 +1,5 @@
-// let restaurantsimport mongodb from "mongodb"
-// const ObjectId = mongodb.ObjectID;
+import mongodb from "mongodb"
+const ObjectId = mongodb.ObjectID;
 let restaurants;
 //use this restaurants variable to store a reference to our database
 

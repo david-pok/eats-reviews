@@ -70,7 +70,15 @@ export default class ReviewsController {
       const reviewId = req.query.id;
       const userId = req.body.user_id;
       console.log(reviewId);
+      if (!userId) {
+        res.status(401).json({ error: "Missing user ID" });
+        return;
+      }
       const reviewResponse = await ReviewsDAO.deleteReview(reviewId, userId);
+      if (reviewResponse.deletedCount == 0) {
+        res.status(401).json({ error: "User ID probably incorrect" });
+        return;
+      }
       res.json({ status: "delete success" });
     } catch (e) {
       res.status(500).json({ error: e.message });
