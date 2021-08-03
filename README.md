@@ -24,13 +24,21 @@ A project focusing on MongoDB, Express.js, React.js, and Node.js. Utilizes sampl
 * Add to package.json "scripts": `"start": "node index.js",` and `"server": "nodemon index.js",`
 
 ### Executing program
-
-* To run back-end dev environment, run
+#### Back-end
+* Add to .env:
+```
+RESTREVIEWS_DB_URI
+RESTREVIEWS_NS
+PORT
+```
+* To run dev environment:
 ```
 npm run server
 ```
 
-* To start back-end server
+* To start server
 ```
 npm start
 ```
+#### Front-end
+
