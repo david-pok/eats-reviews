@@ -9,7 +9,7 @@ import Rests from "./components/rests";
 import RestsLists from "./components/restsLists";
 
 function App() {
-  const [user, setUser] = React.useState(null);
+  const [user, setUser] = useState(null);
 
   async function login(user = null) {
     setUser(user);
@@ -48,6 +48,24 @@ function App() {
           </li>
         </div>
       </nav>
+
+      <div className="container mt-3">
+        <Switch>
+          <Route exact path={["/", "/restaurants"]} component={RestsLists} />
+          <Route
+            path="/restaurants/:id/review"
+            render={(props) => <AddReview {...props} user={user} />}
+          />
+          <Route
+            path="/restaurants/:id"
+            render={(props) => <Rests {...props} user={user} />}
+          />
+          <Route
+            path="/login"
+            render={(props) => <Login {...props} login={login} />}
+          />
+        </Switch>
+      </div>
     </div>
   );
 }
