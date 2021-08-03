@@ -5,7 +5,7 @@ export default function AddReview(props) {
 
     return (
         <>
-            
+            ADDREVIEW
         </>
     )
 }

@@ -5,7 +5,7 @@ export default function Rests(props) {
 
     return (
         <>
-            
+            RESTS
         </>
     )
 }

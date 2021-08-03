@@ -5,7 +5,7 @@ export default function RestsLists(props) {
 
     return (
         <>
-            
+            RESTLISTS
         </>
     )
 }
