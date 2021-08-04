@@ -20,7 +20,7 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div>
       <nav className="navbar navbar-expand navbar-dark bg-dark">
         <a href="/restaurants" className="navbar-brand">
           Restaurant Reviews
