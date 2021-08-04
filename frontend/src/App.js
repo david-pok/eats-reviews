@@ -6,7 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import AddReview from "./components/addReview";
 import Login from "./components/login";
 import Rests from "./components/rests";
-import RestsLists from "./components/restsLists";
+import RestsList from "./components/restsList";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -51,7 +51,7 @@ function App() {
 
       <div className="container mt-3">
         <Switch>
-          <Route exact path={["/", "/restaurants"]} component={RestsLists} />
+          <Route exact path={["/", "/restaurants"]} component={RestsList} />
           <Route
             path="/restaurants/:id/review"
             render={(props) => <AddReview {...props} user={user} />}
